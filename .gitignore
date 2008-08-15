@@ -9,6 +9,7 @@ log/*.log
 public/assets
 public/cache
 public/plugin_assets
+log
 tmp
 themes
 *~
