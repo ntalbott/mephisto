@@ -1,3 +1,0 @@
-You'll need to change your templates/archive.liquid template to use this. See
-lib/templates/archive.liquid.example for an example of an archive liquid
-template.
