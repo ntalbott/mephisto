@@ -20,3 +20,6 @@ after "deploy:symlink" do
 end
 
 before "deploy:update_code", "deploy:git:pending"
+after "deploy:update_code" do
+  run %(cd #{release_path} && rake config/initializers/session_store.rb)
+end

@@ -3,7 +3,7 @@ STATS_DIRECTORIES << %w(Liquid\ Drops app/drops) << %w(Liquid\ Filters app/filte
 namespace :cache do
   desc "Clear page cache for one or more sites.  (rake cache:clear ID=1,2 HOST=foo.com)"
   task :clear => :environment do
-    require 'application'
+    require 'application_controller'
     sites = []
     sites += Site.find(ENV['ID'].split(',')) if ENV['ID']
     sites += Site.find(:all, :conditions => ['host IN (?)', ENV['HOST'].split(',')]) if ENV['HOST']
