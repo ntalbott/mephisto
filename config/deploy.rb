@@ -20,4 +20,3 @@ after "deploy:symlink" do
 end
 
 before "deploy:update_code", "deploy:git:pending"
-
