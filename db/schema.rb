@@ -125,15 +125,6 @@ ActiveRecord::Schema.define(:version => 20081223221228) do
     t.integer  "site_id"
   end
 
-  create_table "feedbacks", :force => true do |t|
-    t.integer  "site_id"
-    t.string   "name"
-    t.string   "email"
-    t.text     "body"
-    t.string   "key"
-    t.datetime "created_at"
-  end
-
   create_table "memberships", :force => true do |t|
     t.integer  "site_id"
     t.integer  "user_id"
@@ -145,6 +136,11 @@ ActiveRecord::Schema.define(:version => 20081223221228) do
     t.string "name"
     t.text   "options"
     t.string "type"
+  end
+
+  create_table "plugin_schema_info", :id => false, :force => true do |t|
+    t.string  "plugin_name"
+    t.integer "version"
   end
 
   create_table "sections", :force => true do |t|
@@ -168,6 +164,8 @@ ActiveRecord::Schema.define(:version => 20081223221228) do
     t.text    "ping_urls"
     t.integer "articles_per_page",                 :default => 15
     t.string  "host"
+    t.string  "akismet_key",        :limit => 100
+    t.string  "akismet_url"
     t.boolean "approve_comments"
     t.integer "comment_age"
     t.string  "timezone"
@@ -177,8 +175,6 @@ ActiveRecord::Schema.define(:version => 20081223221228) do
     t.string  "tag_path"
     t.string  "tag_layout"
     t.string  "current_theme_path"
-    t.string  "akismet_key",        :limit => 100
-    t.string  "akismet_url"
     t.string  "lang",                              :default => "en-US",          :null => false
   end
 

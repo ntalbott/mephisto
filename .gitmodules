@@ -1,3 +1,6 @@
 [submodule "vendor/rails"]
 	path = vendor/rails
 	url = git://github.com/rails/rails.git
+[submodule "vendor/plugins/mephisto_full_archives"]
+	path = vendor/plugins/mephisto_full_archives
+	url = git://github.com/svenfuchs/mephisto_full_archives.git
