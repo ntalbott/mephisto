@@ -15,7 +15,7 @@ set :keep_releases, 10
 default_run_options[:pty] = true
 
 after "deploy:symlink" do
-  run %(ln -nfs #{shared_path}/assets/#{domain} #{release_path}/public/assets)
+  run %(ln -nfs #{shared_path}/assets #{release_path}/public/assets)
   run "ln -nfs #{shared_path}/themes #{release_path}/themes"
 end
 
